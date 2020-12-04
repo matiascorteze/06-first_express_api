@@ -1,25 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const { person, byTwo, checkPalindrome } = require("../modules/functions")
+const TestController = require("../controllers/testController");
 
-router.get('/name', (req, res, next) => {
-  // ingresar de parámetro un nombre, un apellido, y una edad.
-  res.send(person("Matias", "Corteze", "31"));
+const ContInstance = new TestController();
+
+router.get('/name/:name', (req, res, next) => {
+  ContInstance.person(req, res)
 });
 
-router.get('/bytwo', (req, res, next) => {
-  // ingresar de parámetro un número
-  res.send(byTwo("10"));
+router.get('/bytwo/:num', (req, res, next) => {
+  ContInstance.byTwo(req, res);
 });
 
-router.get('/palindrome', (req, res, next) => {
-    // ingresar de parámetro una palabra
-  res.send(checkPalindrome("arribalabirra"));
+router.get('/palindrome/:word', (req, res, next) => {
+  ContInstance.checkPalindrome(req, res);
 });
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.send("Holaaa");
+  res.send("Para person es /person:nombre");
 });
 
 module.exports = router;

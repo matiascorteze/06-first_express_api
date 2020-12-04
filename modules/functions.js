@@ -1,4 +1,6 @@
 
+// AHREDEPRECADO
+
 function person(name, surname, age) {
   return (`Soy ${name} ${surname} y tengo ${age} años.`)
 }
