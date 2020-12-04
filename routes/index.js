@@ -18,7 +18,7 @@ router.get('/palindrome/:word', (req, res, next) => {
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.send("Para person es /person:nombre");
+  res.send("Express test API with dynamic routes and controllers.");
 });
 
 module.exports = router;
