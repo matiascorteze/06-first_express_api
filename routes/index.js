@@ -16,6 +16,10 @@ router.get('/palindrome/:word', (req, res, next) => {
   ContInstance.checkPalindrome(req, res);
 });
 
+router.get('/primepokemons', (req, res, next) => {
+  ContInstance.getPrimePokemons(req,res);
+})
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   res.send("Express test API with dynamic routes and controllers.");
